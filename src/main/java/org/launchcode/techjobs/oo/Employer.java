@@ -48,7 +48,7 @@ public class Employer {
         return value;
     }
 
-    public void setValue(String value) {
+    public void setValue() {
         this.value = value;
     }
 
