@@ -85,7 +85,7 @@ public class JobTest {
     //Using TDD to Build The toString Method...
     @Test
     //When passed a Job object, it should return a string that contains a blank line before and after the job information.
-    public void testToStringBlankLineBeforeAndAfter(){
+    public void testToStringStartsAndEndsWithNewLin(){
         Job testJob4 = new Job("Product tester",
                 new Employer("ACME"),
                 new Location("Desert"),
@@ -101,9 +101,10 @@ public class JobTest {
 
     }
 
-    //The string should contain a label for each field, followed by the data stored in that field. Each field should be on its own line.
+    //The string should contain a label for each field, followed by the data stored in that field.
+    // Each field should be on its own line.
     @Test
-    public void testToStringLabels() {
+    public void testToStringContainsCorrectLabelsAndData() {
         //test each field
         Job testJob5 = new Job("Product tester",
                 new Employer("ACME"),
@@ -121,8 +122,12 @@ public class JobTest {
 
     //If a field is empty, the method should add, “Data not available”
     @Test
-    public void testToStringEmptyField() {
-        Job testJob6 = new Job("", new Employer(""), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+    public void testToStringHandlesEmptyField() {
+        Job testJob6 = new Job("",
+                new Employer(""),
+                new Location("Desert"),
+                new PositionType("Quality control"),
+                new CoreCompetency("Persistence"));
         assertTrue (testJob6.toString().contains("Data not available"));
 
     }
